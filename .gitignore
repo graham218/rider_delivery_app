@@ -56,3 +56,4 @@ packages/
 *.idea/
 *.iml
 *.vscode/
+node_modules/
