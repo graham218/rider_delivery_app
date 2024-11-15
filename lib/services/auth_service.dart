@@ -1,39 +1,72 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class AuthService {
-  // Backend URL
-  static const baseUrl = 'http://localhost:5000/api/auth';
+  // Base URL of the backend server
+  final String _baseUrl = 'http://localhost:5000';
 
-  // Signup method
-  Future<void> signup(String username,String email, String password) async {
-    final response = await http.post(
-      Uri.parse('$baseUrl/signup'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({'username': username,'email': email, 'password': password}),
-    );
-    // Handle response
-    if (response.statusCode == 200) {
-      print('Signup successful');
-    } else {
-      print('Signup failed');
+  // Method to sign up a new user
+  Future<String?> signUp(String username, String email, String password) async {
+    final url = Uri.parse('$_baseUrl/auth/signup');
+
+    try {
+      // Send the HTTP POST request to the backend
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({
+          'username': username,
+          'email': email,
+          'password': password,
+        }),
+      );
+
+      if (response.statusCode == 201) {
+        // Sign up successful
+        return null;
+      } else if (response.statusCode == 400) {
+        // Handle backend validation errors
+        final responseBody = jsonDecode(response.body);
+        return responseBody['error'] ?? 'An error occurred';
+      } else {
+        // Generic error message for other status codes
+        return 'An unexpected error occurred';
+      }
+    } catch (e) {
+      // Handle network or unexpected errors
+      return 'Failed to connect to the server. Please try again later.';
     }
   }
 
-  // Login method
-  Future<bool> login(String email, String password) async {
-    final response = await http.post(
-      Uri.parse('$baseUrl/login'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({'email': email, 'password': password}),
-    );
+  // Method to log in an existing user
+  Future<String?> login(String email, String password) async {
+    final url = Uri.parse('$_baseUrl/auth/login');
 
-    if (response.statusCode == 200) {
-      print('Login successful');
-      return true;
-    } else {
-      print('Login failed');
-      return false;
+    try {
+      // Send the HTTP POST request to the backend
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({
+          'email': email,
+          'password': password,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        // Login successful, return the token
+        final responseBody = jsonDecode(response.body);
+        return responseBody['token'];
+      } else if (response.statusCode == 401) {
+        // Invalid credentials
+        return 'Incorrect email or password';
+      } else {
+        // Generic error message for other status codes
+        return 'An unexpected error occurred';
+      }
+    } catch (e) {
+      // Handle network or unexpected errors
+      return 'Failed to connect to the server. Please try again later.';
     }
   }
 }
