@@ -2,14 +2,15 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class AuthService {
-  static const baseUrl = 'http://yourbackendurl.com/api/auth';
+  // Backend URL
+  static const baseUrl = 'http://localhost:5000/api/auth';
 
   // Signup method
-  Future<void> signup(String email, String password) async {
+  Future<void> signup(String username,String email, String password) async {
     final response = await http.post(
       Uri.parse('$baseUrl/signup'),
       headers: {'Content-Type': 'application/json'},
-      body: json.encode({'email': email, 'password': password}),
+      body: json.encode({'username': username,'email': email, 'password': password}),
     );
     // Handle response
     if (response.statusCode == 200) {
