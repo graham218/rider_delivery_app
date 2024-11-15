@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'signup_screen.dart'; // Import the sign-up screen
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -16,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -29,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
               // Email Field
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value == null || value.isEmpty || !value.contains('@')) {
@@ -38,11 +40,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               // Password Field
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -51,16 +53,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     // Handle login here (API call for login)
                   }
                 },
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Create Account link
               Center(
                 child: TextButton(
@@ -68,10 +70,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Navigate to the Sign Up screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignUpScreen()),
+                      MaterialPageRoute(builder: (context) => const SignUpScreen()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'Create an Account',
                     style: TextStyle(color: Colors.blue),
                   ),

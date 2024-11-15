@@ -1,4 +1,4 @@
-// backend/models/user.js
+// backend/models/users.js
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -17,4 +17,4 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Users', userSchema);

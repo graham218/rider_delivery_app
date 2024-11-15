@@ -3,10 +3,12 @@ import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,8 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/login',
       routes: {
-        '/login': (context) => LoginScreen(),
-        '/home': (context) => HomeScreen(email: ''), // Pass actual email dynamically
+        '/login': (context) => const LoginScreen(),
+        '/home': (context) => const HomeScreen(email: ''), // Pass actual email dynamically
       },
     );
   }
