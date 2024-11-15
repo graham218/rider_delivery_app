@@ -4,7 +4,8 @@
   "description": "Rider App Server",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "graham218",
   "license": "ISC",
@@ -19,5 +20,8 @@
     "passport": "^0.7.0",
     "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
