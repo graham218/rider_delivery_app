@@ -1,4 +1,4 @@
-import 'package:admin/models/recent_file.dart';
+import 'package:rider_delivery_app/models/recent_file.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
