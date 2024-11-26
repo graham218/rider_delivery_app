@@ -64,7 +64,7 @@ class ChangePasswordScreen extends StatelessWidget {
             },
             style: ElevatedButton.styleFrom(
               elevation: 0,
-              backgroundColor: const Color(0xFF00BF6D),
+              backgroundColor: const Color(0xFFFF7643),
               foregroundColor: Colors.white,
               minimumSize: const Size(double.infinity, 48),
               shape: const StadiumBorder(),
