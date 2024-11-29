@@ -4,6 +4,8 @@ import 'package:rider_delivery_app/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:rider_delivery_app/screens/auth/sign_in.dart';
+import 'package:rider_delivery_app/screens/auth/sign_up.dart';
 
 void main() {
   runApp(MyApp());
