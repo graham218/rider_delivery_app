@@ -1,10 +1,10 @@
 import 'package:rider_delivery_app/controllers/menu_app_controller.dart';
-import 'package:rider_delivery_app/responsive.dart';
+import 'package:rider_delivery_app/constants/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../../constants.dart';
+import '../../../constants/constants.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -62,7 +62,7 @@ class ProfileCard extends StatelessWidget {
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-              child: Text("Angelina Jolie"),
+              child: Text("Bill Graham"),
             ),
           Icon(Icons.keyboard_arrow_down),
         ],

@@ -1,4 +1,4 @@
-import 'package:authentication_using_nodejs/models/user.dart';
+import 'package:rider_delivery_app/models/user.dart';
 import 'package:flutter/cupertino.dart';
 
 class UserProvider extends ChangeNotifier {

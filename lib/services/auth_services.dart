@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-import 'package:authentication_using_nodejs/models/user.dart';
-import 'package:authentication_using_nodejs/providers/user_provider.dart';
-import 'package:authentication_using_nodejs/screens/home_screen.dart';
-import 'package:authentication_using_nodejs/screens/signup_screen.dart';
+import 'package:rider_delivery_app/models/user.dart';
+import 'package:rider_delivery_app/providers/user_provider.dart';
+import 'package:rider_delivery_app/screens/main/main_screen.dart';
+import 'package:rider_delivery_app/screens/auth/sign_up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
-import '../utils/constants.dart';
-import '../utils/utils.dart';
+import '../constants/constants.dart';
+import '../constants/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
@@ -79,7 +79,7 @@ class AuthService {
           await prefs.setString("x-auth-token", jsonDecode(res.body)["token"]);
           navigator.pushAndRemoveUntil(
               MaterialPageRoute(
-                builder: (context) => const HomeScreen(),
+                builder: (context) => MainScreen(),
               ),
               (route) => false);
         },
@@ -132,7 +132,7 @@ class AuthService {
     prefs.setString("x-auth-token", "");
     navigator.pushAndRemoveUntil(
         MaterialPageRoute(
-          builder: (context) => const SignupScreen(),
+          builder: (context) => const SignUpScreen(),
         ),
         (route) => false);
   }

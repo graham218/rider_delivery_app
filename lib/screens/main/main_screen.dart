@@ -1,5 +1,5 @@
 import 'package:rider_delivery_app/controllers/menu_app_controller.dart';
-import 'package:rider_delivery_app/responsive.dart';
+import 'package:rider_delivery_app/constants/responsive.dart';
 import 'package:rider_delivery_app/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

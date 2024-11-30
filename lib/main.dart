@@ -1,4 +1,4 @@
-import 'package:rider_delivery_app/constants.dart';
+import 'package:rider_delivery_app/constants/constants.dart';
 import 'package:rider_delivery_app/controllers/menu_app_controller.dart';
 import 'package:rider_delivery_app/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:rider_delivery_app/constants.dart';
+import 'package:rider_delivery_app/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {

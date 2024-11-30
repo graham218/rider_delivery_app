@@ -1,8 +1,8 @@
-import 'package:rider_delivery_app/responsive.dart';
+import 'package:rider_delivery_app/constants/responsive.dart';
 import 'package:rider_delivery_app/screens/dashboard/components/my_fields.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../constants/constants.dart';
 import 'components/header.dart';
 
 import 'components/recent_files.dart';

@@ -1,8 +1,8 @@
 
-import 'package:rider_delivery_app/responsive.dart';
+import 'package:rider_delivery_app/constants/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:rider_delivery_app/models/my_files.dart';
-import '../../../constants.dart';
+import '../../../constants/constants.dart';
 import 'file_info_card.dart';
 
 class MyFiles extends StatelessWidget {
