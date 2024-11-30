@@ -1,0 +1,11 @@
+{
+  "name": "rider_delivery_app_server",
+  "version": "1.0.0",
+  "description": "Node JS Server for The Rider Delivery Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Bill Graham Peacemaker",
+  "license": "ISC"
+}
