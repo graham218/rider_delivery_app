@@ -46,6 +46,7 @@ packages/
 
 # Local development environments
 .env
+.env/
 
 # Temporary files
 *.log
